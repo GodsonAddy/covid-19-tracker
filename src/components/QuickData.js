@@ -46,7 +46,7 @@ function QuickData() {
     },
     {
       id: 6,
-      name: "TOTAL DEATH",
+      name: "TOTAL DEATHS",
       topic: covidResults?.death,
       color: "#E60000",
     },
