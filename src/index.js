@@ -2,17 +2,34 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { persistor, store } from "./features/store";
 import { PersistGate } from "redux-persist/integration/react";
+import { unstable_createMuiStrictModeTheme as createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
+import reportWebVitals from "./reportWebVitals";
+
+const theme = createTheme({
+  typography: {
+    button: {
+      textTransform: "none",
+    },
+    fontFamily: ["Poppins"].join(","),
+    palette: {
+      primary: "#FFFFFF",
+      secondary: "4A4D4E",
+    },
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <App />
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
       </PersistGate>
     </Provider>
   </React.StrictMode>

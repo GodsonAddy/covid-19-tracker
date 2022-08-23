@@ -43,7 +43,7 @@ function CovidData() {
     <>
       <CssBaseline />
       <Container>
-        <Box sx={{ height: 400, width: "100%", bgcolor: "white" }}>
+        <Box sx={{ height: 400, width: "100%", bgcolor: "white", mb: 10 }}>
           <DataGrid
             getRowId={(row) => row?._id}
             rows={covidResultsStates}
